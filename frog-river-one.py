@@ -1,12 +1,12 @@
 # problem https://app.codility.com/programmers/lessons/4-counting_elements/frog_river_one/
 def solution(X, A):
     # create an empty path
-    path = []
-    for i in range(0, X):
-        path.append(0)
+    path = {}
+    # for i in range(0, X):
+    #     path.append(0)
     for i in range(0, len(A)):
-        path[A[i]-1] = 1
-        if(sum(path) == X):
+        path[A[i]] = 1
+        if(path.__len__() == X):
             return i
     return -1
 

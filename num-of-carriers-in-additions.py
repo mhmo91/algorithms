@@ -18,4 +18,4 @@ def numberOfCarryOperations(x, y):
     return result
 
 
-print(numberOfCarryOperations(798, 2))
+print(numberOfCarryOperations(9998, 2))

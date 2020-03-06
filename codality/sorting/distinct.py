@@ -1,6 +1,3 @@
-# i'm an empty file that Mo uses to play!
-
-
 def solution(A):
     hashMap = {}
     for num in A:

@@ -7,6 +7,9 @@
  * @return {number}
  */
 var removeDuplicates = function (nums) {
+  // TODO input type validation
+  // TODO short circut edge cases if needed
+  // the use of variable names here is not practical, don't do that in real life. write names that your cat can understand!
   let k = 0;
   for (let i in nums) {
     const current = nums[i];

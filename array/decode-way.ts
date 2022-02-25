@@ -5,6 +5,13 @@
  * @return {number}
  */
 
+/**
+ * General memoization function
+ * it assumes the the function input is always one paramter and that it's a string
+ * this works for the purpose of this example
+ * @param fn function to be memoized
+ * @returns {fn} return type
+ */
 const memoize = (fn: Function) => {
   let cache: { [key: string]: number } = {};
   return (input: string) => {
@@ -16,12 +23,10 @@ const memoize = (fn: Function) => {
 };
 
 const numDecodings = (s: string) => {
-  // possibilitiesSet = (1,2,..., 26);
   const possibilitiesSet = new Set(
     Array.from(Array(26).keys()).map((v) => v + 1)
   );
 
-  //12
   let subNumDecoding = memoize((subS: string) => {
     let response = [];
     if (subS[0] === "0") return 0;
@@ -31,8 +36,6 @@ const numDecodings = (s: string) => {
     if (subS.length === 0) {
       return 1;
     }
-    // we care about out pivot point
-
     if (possibilitiesSet.has(parseInt(subS.slice(0, 1)))) {
       response.push(subNumDecoding(subS.slice(1)));
     }
